@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="u1" class="com.hafizgoo.springstart.bean.User">
+        <constructor-arg index="0" value="Tom"/>
+        <constructor-arg index="1" value="21"/>
+    </bean>
+    <bean id="u2" class="com.hafizgoo.springstart.bean.User">
+        <property name="name" value="Jerry"/>
+        <property name="age" value="14"/>
+    </bean>
+
+    <context:component-scan base-package="com.hafizgoo.springstart.bean"></context:component-scan>
+
+    <context:annotation-config></context:annotation-config>
+
+    <bean id="userDao" class="com.hafizgoo.springstart.bean.UserDaoImpl"></bean>
+
+    <bean id="userService" class="com.hafizgoo.springstart.bean.UserServiceImpl"></bean>
+
+    <bean id="userController" class="com.hafizgoo.springstart.bean.UserController"></bean>
+
+
+
+</beans>
